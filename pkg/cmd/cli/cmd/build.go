@@ -173,6 +173,7 @@ $ s2i build . centos/ruby-22-centos7 hello-world-app
 	cmdutil.AddCommonFlags(buildCmd, cfg)
 
 	buildCmd.Flags().BoolVar(&(cfg.RunImage), "run", false, "Run resulting image as part of invocation of this command")
+	buildCmd.Flags().BoolVarP(&cfg.Buildah, "buildah", "b", false, "Use the Buildah build engine instead of Docker")
 	buildCmd.Flags().BoolVar(&(cfg.IgnoreSubmodules), "ignore-submodules", false, "Ignore all git submodules when cloning application repository")
 	buildCmd.Flags().VarP(&(cfg.Environment), "env", "e", "Specify an single environment variable in NAME=VALUE format")
 	buildCmd.Flags().StringVarP(&(ref), "ref", "r", "", "Specify a ref to check-out")

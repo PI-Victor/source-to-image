@@ -234,6 +234,10 @@ type Config struct {
 	// SourceInfo provides the info about the source to be built rather than relying
 	// on the Downloader to retrieve it.
 	SourceInfo *git.SourceInfo
+
+	// Buildah is a boolean flag that instructs the build engine to use Buildah
+	// instead of Docker.
+	Buildah bool
 }
 
 // EnvironmentSpec specifies a single environment variable.
